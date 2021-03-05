@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Extract colors from image</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    </head>
+
+    <body>
+        
+        <div class="container">
+
+            <img src="{{ image }}" alt="image">
+
+            <form action="{{url_for('home')}}" method="post" enctype="multipart/form-data">                
+                <input type="file" id="file" name="file" accept="image/png, image/jpeg" required>
+                <input type="text" id="limit" name="limit" placeholder="Number of colors" required>
+                <button type="submit" class="btn btn-dark">Send</button>
+            </form>
+
+            <div class="colors-list">
+                <h2>List of colors in this image :</h2>
+                {% for color in colors %}
+
+                <div class="color-block">
+                    <div class="color-display" style="background-color:{{ color[0] }}"></div>
+                    <p>{{ color[0] }} : {{ color[1] }}%</p>
+                </div>
+
+                {% endfor %}
+            </div>
+
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 100%;
+    max-width: 600px;
+}
+
+form {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.color-list {
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.color-block {
+    border: 1px solid black;
+    padding: 5px;
+    display: flex;
+    margin: 5px;
+    align-items: center;
+}
+
+.color-display {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
